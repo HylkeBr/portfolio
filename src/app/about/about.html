@@ -1,1 +1,38 @@
-<p>about works!</p>
+<div
+  class="about-container"
+  role="region"
+  tabindex="0"
+  (wheel)="onWheel($event)"
+  (scrollend)="onScrollEnd()"
+>
+  <div class="section section1">
+    <div class="content">
+      <div class="text">
+        <h1>Hello, I am <span class="highlight">Hylke</span></h1>
+        <p>
+          Welcome to my portfolio website. My name is Hylke Brouwer and I am {{ currentAge }} years old.
+          Currently, I am focused on improving my skills in web development and design. With my current
+          occupation, I am constantly seeking new opportunities to learn and grow in the field of web
+          development. My job as a frontend developer allows me to apply my skills in real-world projects
+          and continuously improve my craft.
+          <br /><br />
+          I am always open to collaboration and new opportunities in the web development field. Send me an
+          <a href="mailto:hylkehesselbrouwer@gmail.com">email</a> if you would like to get in touch.
+          <br /><br />
+          Feel free to explore my portfolio to see the projects I have worked on and the skills I have
+          developed over time.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/get_there_portret.webp" alt="Hylke Brouwer" />
+      </div>
+    </div>
+    <div class="scroll">
+      <span>More</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  </div>
+  <div class="section section2"></div>
+  <div class="section section3"></div>
+  <div class="section section4"></div>
+</div>

@@ -10,14 +10,14 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'about',
-    title: 'About',
-    component: AboutComponent,
-  },
-  {
     path: 'timeline',
     title: 'Timeline',
     component: TimelineComponent,
+  },
+  {
+    path: 'about',
+    title: 'About',
+    component: AboutComponent,
   },
 
   {
