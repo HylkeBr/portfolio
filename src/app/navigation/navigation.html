@@ -1,0 +1,20 @@
+<nav class="navigation" aria-label="Main navigation">
+  <div class="persona">
+    <img class="persona-image" src="assets/prof_img1x1.jpeg" alt="Persona">
+    <span class="persona-name">Hylke Brouwer</span>
+  </div>
+  <div class="navigation-items">
+    @for (route of navigationRoutes; track route) {
+      <a
+        class="navigation-item"
+        [routerLink]="route.path"
+        [title]="route.title"
+        [routerLinkActive]="'active'"
+      > {{ route.title }} </a>
+    }
+  </div>
+  <div class="status">
+    <div class="status-indicator" [class]="availabilityClassName"></div>
+    <span class="status-text">{{ availabilityStatus }}</span>
+  </div>
+</nav>

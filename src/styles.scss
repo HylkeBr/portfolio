@@ -1,0 +1,21 @@
+@use './--variables.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--background-color);
+  color: var(--text-color1);
+
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

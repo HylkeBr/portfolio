@@ -1,0 +1,39 @@
+:root {
+  --background-color: #f7f8fa;
+  --surface-color: #eef1f5;
+
+  --text-color1: #20242c;
+  --text-color2: #68707d;
+
+  --primary-color: #2563eb;
+  --secondary-color: #1d4ed8;
+  --accent-color: #dbeafe;
+
+  --border-color: #dce1e8;
+
+  // popup (ngx-toast)
+  --success-background-color: #ecfdf3;
+  --success-text-color: #008a2e;
+
+  --warning-background-color: #fffcf0;
+  --warning-text-color: #df8421;
+
+  --error-background-color: #fff0f0;
+  --error-text-color: #e60000;
+
+  --neutral-background-color: #f0f8ff;
+  --neutral-text-color: #2583e0;
+
+  //
+
+  --default-padding: 16px;
+
+  --default-text-size: 16px;
+  --small-text-size: 12px;
+  --large-text-size: 20px;
+
+  //
+
+  --font-type-mono: "Roboto Mono", monospace;
+  --font-type-highlight: "Lora", 'Inter', 'Roboto', sans-serif;
+}

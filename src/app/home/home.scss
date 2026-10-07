@@ -1,0 +1,127 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+
+  padding:
+    calc(var(--default-padding) * 3)
+    calc(var(--default-padding) * 2)
+    var(--default-padding)
+    calc(var(--default-padding) * 2);
+
+  .first-text {
+    font-family: var(--font-type-mono);
+    font-size: var(--small-text-size);
+    color: var(--text-color2);
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    h1 {
+      margin: 0;
+      font-size: calc(var(--default-text-size) * 4);
+
+      .typewriter {
+        font-family: var(--font-type-highlight);
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+
+    .additional-text {
+      width: 40%;
+
+      .role {
+        font-family: var(--font-type-mono);
+        font-size: var(--small-text-size);
+        color: var(--text-color2);
+      }
+    }
+
+    .scroll {
+      text-decoration: none;
+      color: var(--text-color1);
+
+      font-size: var(--small-text-size);
+      align-self: flex-end;
+      margin-right: var(--default-padding);
+
+      padding: calc(var(--default-padding) * 1.5);
+      border: 1px solid var(--text-color2);
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: calc(var(--default-padding) / 2);
+
+      rotate: 350deg;
+      transition: rotate 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        rotate: 360deg;
+      }
+    }
+  }
+}
+
+.divider {
+  margin-top: calc(var(--default-padding) * 2);
+  background-color: var(--text-color1);
+  color: var(--background-color);
+  padding: calc(var(--default-padding) * 2) 0 var(--default-padding) 0;
+
+  .divider-text {
+    color: var(--text-color2);
+
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    padding: var(--default-padding) 0;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .group {
+      display: flex;
+      animation: spin 20s linear infinite;
+
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: var(--default-padding);
+
+        font-size: calc(var(--default-text-size) * 4);
+      }
+    }
+  }
+
+  @keyframes spin {
+    from { translate: 0; }
+    to { translate: -100%; }
+  }
+}
+
+.section1 {
+  height: 60vh;
+}
