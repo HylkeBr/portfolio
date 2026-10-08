@@ -125,3 +125,44 @@
 .section1 {
   height: 60vh;
 }
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: var(--default-padding);
+    justify-content: start;
+
+    .hero-text {
+      padding-top: 30%;
+
+      h1 {
+        font-size: calc(var(--default-text-size) * 2.5);
+        text-align: center;
+      }
+    }
+
+    .footer {
+      margin-top: auto;
+
+      .additional-text {
+        width: 100%;
+      }
+
+      .scroll {
+        display: none;
+      }
+    }
+  }
+
+  .divider {
+    margin-top: var(--default-padding);
+    padding: var(--default-padding) 0;
+
+    .carousel {
+      .group {
+        .card {
+          font-size: calc(var(--default-text-size) * 3);
+        }
+      }
+    }
+  }
+}

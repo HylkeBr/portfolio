@@ -13,6 +13,18 @@ $min-width: 200px;
 
   font-size: var(--default-text-size);
 
+  .mobile-nav-toggle {
+    padding: calc(var(--default-padding) / 2);
+    border: 0;
+    background: transparent;
+    color: var(--text-color1);
+    font: inherit;
+
+    .icon-hidden {
+      display: none;
+    }
+  }
+
   .persona {
     min-width: $min-width;
 
@@ -77,6 +89,48 @@ $min-width: 200px;
       &.blue {
         background-color: var(--neutral-text-color);
       }
+    }
+  }
+}
+
+.mobile-nav {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 2px solid var(--border-color);
+  overflow: hidden;
+  transition:
+    grid-template-rows 0.3s ease-in-out,
+    border-bottom-width 0.3s ease-in-out;
+
+  &.hidden {
+    grid-template-rows: 0fr;
+    border-bottom-width: 0;
+  }
+
+  .mobile-nav-content {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .navigation-items {
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--default-padding) / 2) var(--default-padding);
+    gap: calc(var(--default-padding) / 2);
+  }
+
+  .navigation-item {
+    text-decoration: none;
+    color: var(--text-color2);
+
+    &.active {
+      color: var(--text-color1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav {
+      transition: none;
     }
   }
 }

@@ -1,20 +1,55 @@
+@let isMobileUser = isMobileUser$ | async;
+@let mobileNavOpen = showMobileNav$ | async;
+
 <nav class="navigation" aria-label="Main navigation">
   <div class="persona">
     <img class="persona-image" src="assets/prof_img1x1.jpeg" alt="Persona">
     <span class="persona-name">Hylke Brouwer</span>
   </div>
-  <div class="navigation-items">
-    @for (route of navigationRoutes; track route) {
-      <a
-        class="navigation-item"
-        [routerLink]="route.path"
-        [title]="route.title"
-        [routerLinkActive]="'active'"
-      > {{ route.title }} </a>
-    }
-  </div>
-  <div class="status">
-    <div class="status-indicator" [class]="availabilityClassName"></div>
-    <span class="status-text">{{ availabilityStatus }}</span>
-  </div>
+  @if (isMobileUser) {
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      (click)="toggleMobileNavigation()"
+    >
+      <div [class.icon-hidden]="!mobileNavOpen"><i class="fa-solid fa-xmark"></i></div>
+      <div [class.icon-hidden]="mobileNavOpen"><i class="fa-solid fa-bars"></i></div>
+    </button>
+  } @else {
+    <div class="navigation-items">
+      @for (route of navigationRoutes; track route.path) {
+        <a
+          class="navigation-item"
+          [routerLink]="route.path"
+          [title]="route.title"
+          [routerLinkActive]="'active'"
+        > {{ route.title }} </a>
+      }
+    </div>
+    <div class="status">
+      <div class="status-indicator" [class]="availabilityClassName"></div>
+      <span class="status-text">{{ availabilityStatus }}</span>
+    </div>
+  }
 </nav>
+
+@if (isMobileUser) {
+  <div
+    id="mobile-navigation"
+    class="mobile-nav"
+    [class.hidden]="!mobileNavOpen"
+  >
+    <div class="mobile-nav-content">
+      <div class="navigation-items">
+        @for (route of navigationRoutes; track route.path) {
+          <a
+            class="navigation-item"
+            [routerLink]="route.path"
+            [title]="route.title"
+            [routerLinkActive]="'active'"
+          > {{ route.title }} </a>
+        }
+      </div>
+    </div>
+  </div>
+}
